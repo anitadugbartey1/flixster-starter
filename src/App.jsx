@@ -1,21 +1,25 @@
-import React from 'react';
-import './App.css';
-import MovieCard from './components/MovieCard'; 
-import MovieList from './components/MovieList';
+import React from "react";
+import MovieList from "./components/MovieList";
+import "./App.css"; 
+import Header from "./Header";
+import Footer from "./Footer";
 
-const App = () => {
-    return (
-        <div className="app">
-            {/* <h1>Movie Cards</h1> */}
-            {/* <MovieCard 
-                title=""
-                posterUrl=""
-                voteAverage={0}
-            /> */}
-            <h1>Now Playing Movies</h1>
-            <MovieList />
-        </div>
-    );
-};
+
+
+function App() {
+  return (
+    <div className="app">
+      <Header>
+      </Header>
+      <main>
+        <MovieList/>
+        
+      </main>
+      <Footer>
+
+      </Footer>
+    </div>
+  );
+}
 
 export default App;

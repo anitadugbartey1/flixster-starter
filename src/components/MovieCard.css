@@ -1,25 +1,41 @@
-.movie-card {
+.card {
+    width: 100%;
+    max-width: 200px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
     overflow: hidden;
-    width: 200px;
-    margin: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    background-color: #fff;
-}
-
-.movie-card__poster {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card img {
     width: 100%;
     height: auto;
-}
-
-.movie-card__title {
+    display: block;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .card h2 {
+    margin: 10px;
     font-size: 1.2em;
-    margin: 10px 0;
-}
+  }
+  
+  .card p {
+    margin: 0 10px 10px;
+    color: #777;
+  }
+  
+  #watched-button {
+    color: white;
+    background-color: rgb(0, 0, 2);
+  }
 
-.movie-card__vote-average {
-    font-size: 1em;
-    color: #555;
-}
+  #favorite-button{
+    color: white;
+    background-color: rgb(251, 99, 185);
+  }

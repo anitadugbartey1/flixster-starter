@@ -1,21 +1,42 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './MovieCard.css';
+import React, { useState } from "react";
+import "./MovieCard.css";
 
-const MovieCard = ({ title, posterUrl, voteAverage }) => {
-    return (
-        <div className="movie-card">
-            <img src={posterUrl} alt={`${title} poster`} className="movie-card__poster" />
-            <h2 className="movie-card__title">{title}</h2>
-            <p className="movie-card__vote-average">Rating: {voteAverage}</p>
-        </div>
-    );
-};
+const MovieCard = ({ title, posterPath, voteAverage, onClick }) => {
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [isWatched, setIsWatched] = useState(false);
 
-MovieCard.propTypes = {
-    title: PropTypes.string.isRequired,
-    posterUrl: PropTypes.string.isRequired,
-    voteAverage: PropTypes.number.isRequired,
+  const handleFavoriteClick = (e) => {
+    e.stopPropagation(); // Prevent triggering onClick of the card
+    setIsFavorite(!isFavorite);
+  };
+
+  const handleWatchedChange = (e) => {
+    e.stopPropagation(); // Prevent triggering onClick of the card
+    setIsWatched(!isWatched);
+  };
+
+  return (
+    <div className="card" onClick={onClick}>
+      <img
+        src={`https://image.tmdb.org/t/p/w500${posterPath}`}
+        alt={title}
+      />
+      <h2>{title}</h2>
+      <p>Rating: {voteAverage}</p>
+      <button id="favorite-button" onClick={handleFavoriteClick}>
+        {isFavorite ? "💖" : "Favorite♡"}
+      </button>
+      <button id="watched-button">
+        Watched
+        <input
+          type="checkbox"
+          checked={isWatched}
+          onChange={handleWatchedChange}
+        />
+      </button>
+    </div>
+  );
 };
 
 export default MovieCard;
+
