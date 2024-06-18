@@ -43,7 +43,7 @@ Estimated time spent: **16** hours spent in total
 
 ### Walkthrough Video
 
-`ADD_EMBEDDED_CODE_HERE`
+`https://drive.google.com/file/d/1psQ7aBnVkpzZu2XfKKxGPEMeXXiDb5kb/view?usp=drive_link`
 
 ### Reflection
 
