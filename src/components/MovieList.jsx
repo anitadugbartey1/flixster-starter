@@ -96,8 +96,8 @@ const MovieList = () => {
   return (
     <div>
       <div className="button-bar">
-        <button onClick={() => handleViewChange("nowPlaying")} className={view === "nowPlaying" ? "active" : ""}>Now Playing</button>
-        <button onClick={() => handleViewChange("search")} className={view === "search" ? "active" : ""}>Search</button>
+        <button id="now-playing button" onClick={() => handleViewChange("nowPlaying")} className={view === "nowPlaying" ? "active" : ""}>Now Playing</button>
+        <button id= "search-button2" onClick={() => handleViewChange("search")} className={view === "search" ? "active" : ""}>Search</button>
       </div>
 
       {view === "search" && (
@@ -108,7 +108,7 @@ const MovieList = () => {
             onChange={handleInputChange}
             placeholder="Search for a movie..."
           />
-          <button onClick={fetchMovies}>Search</button>
+          <button id="search-button" onClick={fetchMovies}>Search</button>
         </div>
       )}
 
@@ -137,7 +137,7 @@ const MovieList = () => {
           </div>
         ))}
       </div>
-      <button onClick={loadMore}>Load More</button>
+      <button id="load-more button" onClick={loadMore}>Load More</button>
 
       {isModalOpen && selectedMovie && (
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
